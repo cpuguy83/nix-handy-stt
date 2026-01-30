@@ -3,27 +3,27 @@
     "handy-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1768869098,
-        "narHash": "sha256-Hr61/97y1pWSB9KJ/cI/j5YyjpHimOc4az/Oh+kEoG4=",
-        "owner": "cjpais",
+        "lastModified": 1769541499,
+        "narHash": "sha256-iyOU+h4ZgBPO7RDz2NENWmPYOSRaVGHvPRXy5ejTCEI=",
+        "owner": "SoumyaRanjanPatnaik",
         "repo": "Handy",
-        "rev": "f38b52e123220f2f45d044ff679df2f511addec6",
+        "rev": "ac7f2b360c8c5c5085a2204d98981aaf50494f1a",
         "type": "github"
       },
       "original": {
-        "owner": "cjpais",
-        "ref": "v0.7.0",
+        "owner": "SoumyaRanjanPatnaik",
         "repo": "Handy",
+        "rev": "ac7f2b360c8c5c5085a2204d98981aaf50494f1a",
         "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1769527094,
-        "narHash": "sha256-xV20Alb7ZGN7qujnsi5lG1NckSUmpIb05H2Xar73TDc=",
+        "lastModified": 1769740369,
+        "narHash": "sha256-xKPyJoMoXfXpDM5DFDZDsi9PHArf2k5BJjvReYXoFpM=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "afce96367b2e37fc29afb5543573cd49db3357b7",
+        "rev": "6308c3b21396534d8aaeac46179c14c439a89b8a",
         "type": "github"
       },
       "original": {

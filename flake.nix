@@ -9,9 +9,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Handy source
+    # Handy source - PR #680 for Wayland layer-shell overlay support
     handy-src = {
-      url = "github:cjpais/Handy/v0.7.0";
+      url = "github:SoumyaRanjanPatnaik/Handy/ac7f2b360c8c5c5085a2204d98981aaf50494f1a";
       flake = false;
     };
   };
@@ -34,7 +34,7 @@
       rustToolchain = pkgs.rust-bin.stable.latest.default;
 
       # Version to package
-      version = "0.7.0";
+      version = "0.7.0+layer-shell";
 
       # Common native build inputs
       nativeBuildInputs = with pkgs; [
@@ -61,6 +61,7 @@
 
         # UI/Tauri/GTK
         gtk3
+        gtk-layer-shell # For Wayland overlay support (PR #680)
         webkitgtk_4_1
         libayatana-appindicator
         librsvg
@@ -154,7 +155,7 @@
         # Fixed-output derivation for network access during bun install
         outputHashMode = "recursive";
         outputHashAlgo = "sha256";
-        outputHash = "sha256-kKOmTIsxfVLJSbrn7xmhFx8Y3bXI1/lmo4aEEgKMqn0=";
+        outputHash = "sha256-9L7vh3TpzDcfiIkV2hA0SPTGTswyW3YARi2eZgh3jY0=";
       };
 
       # Build using rustPlatform for better compatibility
