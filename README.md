@@ -54,14 +54,6 @@ nix build github:YOUR_USERNAME/nix-handy-tts
 
 On first launch, Handy will prompt you to select a speech-to-text model. Models are downloaded to `~/.local/share/com.pais.handy/`.
 
-### Push-to-Talk
-
-For global hotkeys to work, you may need to:
-
-1. Be in the `input` group: `sudo usermod -aG input $USER` (then log out/in)
-2. Enable "Experimental Features" in Handy settings
-3. Switch to "Handy Keys" keyboard implementation in settings
-
 ## Packages
 
 The flake provides several packages:
@@ -69,6 +61,10 @@ The flake provides several packages:
 - `default` / `handy` - Handy wrapped in an FHS environment (recommended)
 - `handy-unwrapped` - Unwrapped Handy binary
 - `frontend` - Just the frontend assets
+
+## Home Manager Module
+
+- `homeManagerModules.default` / `homeManagerModules.handy` - Installs Handy and its desktop entry
 
 ## Development
 
@@ -79,10 +75,6 @@ nix develop
 ```
 
 This provides all build dependencies and copies the Handy source to `./handy-src/`.
-
-## Platform Support
-
-Currently only `x86_64-linux` is supported.
 
 ## Known Issues
 
