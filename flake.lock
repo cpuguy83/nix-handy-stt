@@ -1,0 +1,66 @@
+{
+  "nodes": {
+    "handy-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1768869098,
+        "narHash": "sha256-Hr61/97y1pWSB9KJ/cI/j5YyjpHimOc4az/Oh+kEoG4=",
+        "owner": "cjpais",
+        "repo": "Handy",
+        "rev": "f38b52e123220f2f45d044ff679df2f511addec6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cjpais",
+        "ref": "v0.7.0",
+        "repo": "Handy",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1769461804,
+        "narHash": "sha256-msG8SU5WsBUfVVa/9RPLaymvi5bI8edTavbIq3vRlhI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "bfc1b8a4574108ceef22f02bafcf6611380c100d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "handy-src": "handy-src",
+        "nixpkgs": "nixpkgs",
+        "rust-overlay": "rust-overlay"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1769655783,
+        "narHash": "sha256-Yq4uj+RjiE2Bw7C+7Mojdiw0kTh9xwJxUo6IjofZV+c=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "8b94aae763a09749cc153bab0b14e6ad8fc95494",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
