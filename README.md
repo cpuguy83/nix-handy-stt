@@ -11,7 +11,7 @@ Add the flake to your inputs:
 ```nix
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     home-manager.url = "github:nix-community/home-manager";
     handy = {
       url = "github:YOUR_USERNAME/nix-handy-tts";
@@ -22,6 +22,11 @@ Add the flake to your inputs:
   };
 }
 ```
+
+> **Note:** This flake is built against `nixpkgs-unstable`. If you use
+> `inputs.nixpkgs.follows` to point to a different nixpkgs channel (e.g., a
+> stable release), you may encounter library compatibility issues. For best
+> results, ensure your nixpkgs also follows `nixpkgs-unstable`.
 
 Import the module and enable it. You'll also need to apply the overlay to get `pkgs.handy`:
 
