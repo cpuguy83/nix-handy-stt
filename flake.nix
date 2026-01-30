@@ -259,7 +259,12 @@
         postFixup = ''
           wrapProgram $out/bin/handy \
             --prefix LD_LIBRARY_PATH : "${pkgs.lib.makeLibraryPath runtimeLibs}" \
-            --prefix PATH : "${pkgs.lib.makeBinPath [ pkgs.xdotool ]}"
+            --prefix PATH : "${
+              pkgs.lib.makeBinPath [
+                pkgs.xdotool
+                pkgs.wtype
+              ]
+            }"
         '';
 
         meta = with pkgs.lib; {
