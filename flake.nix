@@ -11,7 +11,7 @@
 
     # Handy source
     handy-src = {
-      url = "github:cjpais/Handy/v0.7.0";
+      url = "github:cjpais/Handy/v0.7.1";
       flake = false;
     };
   };
@@ -34,7 +34,7 @@
       rustToolchain = pkgs.rust-bin.stable.latest.default;
 
       # Version to package
-      version = "0.7.0";
+      version = "0.7.1";
 
       # Common native build inputs
       nativeBuildInputs = with pkgs; [
@@ -61,6 +61,7 @@
 
         # UI/Tauri/GTK
         gtk3
+        gtk-layer-shell
         webkitgtk_4_1
         libayatana-appindicator
         librsvg
@@ -154,7 +155,7 @@
         # Fixed-output derivation for network access during bun install
         outputHashMode = "recursive";
         outputHashAlgo = "sha256";
-        outputHash = "sha256-kKOmTIsxfVLJSbrn7xmhFx8Y3bXI1/lmo4aEEgKMqn0=";
+        outputHash = "sha256-T7uzDhghITkpF1VZbORCt59i165cEt6bKAf/tHL1dR0=";
       };
 
       # Build using rustPlatform for better compatibility
