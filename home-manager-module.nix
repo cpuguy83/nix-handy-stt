@@ -14,13 +14,20 @@ in
 
     package = lib.mkOption {
       type = lib.types.package;
-      default = pkgs.handy;
-      defaultText = lib.literalExpression "pkgs.handy";
-      description = "The Handy package to use";
+      default = pkgs.handy-unwrapped;
+      defaultText = lib.literalExpression "pkgs.handy-unwrapped";
+      description = "The (unwrapped) Handy package to use";
+    };
+
+    textInputTool = lib.mkOption {
+      type = lib.types.package;
+      default = pkgs.wtype;
+      defaultText = lib.literalExpression "pkgs.wtype";
+      description = "The text input tool to add to PATH (e.g., pkgs.wtype for Wayland, pkgs.xdotool for X11)";
     };
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ cfg.package ];
+    home.packages = [ (pkgs.wrapHandy cfg.package cfg.textInputTool) ];
   };
 }

@@ -24,7 +24,7 @@
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
 
       wrapHandy =
-        pkgs: handy-pkg:
+        pkgs: handy-pkg: textInputTool:
         pkgs.symlinkJoin {
           name = "handy-wrapped";
           paths = [ handy-pkg ];
@@ -33,8 +33,7 @@
             wrapProgram $out/bin/handy \
               --prefix PATH : "${
                 pkgs.lib.makeBinPath [
-                  pkgs.xdotool
-                  pkgs.wtype
+                  textInputTool
                 ]
               }"
           '';
@@ -44,7 +43,8 @@
       packages = forAllSystems (
         system:
         let
-          wrapped = wrapHandy nixpkgs.legacyPackages.${system} handy.packages.${system}.default;
+          pkgs = nixpkgs.legacyPackages.${system};
+          wrapped = wrapHandy pkgs handy.packages.${system}.default pkgs.wtype;
         in
         {
           default = wrapped;
@@ -53,7 +53,9 @@
       );
 
       overlays.default = final: prev: {
-        handy = wrapHandy final handy.packages.${final.system}.default;
+        handy = wrapHandy final handy.packages.${final.system}.default final.wtype;
+        handy-unwrapped = handy.packages.${final.system}.default;
+        wrapHandy = wrapHandy final;
       };
 
       homeManagerModules = {
